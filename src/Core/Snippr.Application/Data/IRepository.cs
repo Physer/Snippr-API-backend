@@ -1,7 +1,14 @@
-﻿namespace Snippr.Application.Data
+﻿using Snippr.Domain.Entities;
+using System;
+using System.Threading.Tasks;
+
+namespace Snippr.Application.Data
 {
     public interface IRepository
     {
-        string Get();
+        Task DeleteSnippet(Guid snippetId);
+        Task<Snippet> GetSnippet(Guid snippetId);
+        Task UpdateSnippet(Guid snippetId, Snippet newSnippet);
+        Task WriteSnippet(Snippet snippet);
     }
 }

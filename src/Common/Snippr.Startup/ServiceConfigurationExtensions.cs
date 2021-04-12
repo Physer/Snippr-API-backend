@@ -13,7 +13,7 @@ namespace Snippr.Startup
             services.Configure<MongoOptions>(configuration.GetSection(MongoOptions.ConfigurationEntry));
         }
 
-        public static void ConfigureApplicationServices(this IServiceCollection services, IConfiguration configuration)
+        public static void ConfigureDataDependencies(this IServiceCollection services, IConfiguration configuration)
         { 
             // All transient services
             services.Scan(configuration => configuration.FromAssemblyOf<IDataDependency>().AddClasses(classes => classes.AssignableTo<IDataDependency>()).AsImplementedInterfaces().WithTransientLifetime());

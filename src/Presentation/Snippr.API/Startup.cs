@@ -27,7 +27,7 @@ namespace Snippr.API
 
             // Custom services
             services.ConfigureCustomOptions(Configuration);
-            services.ConfigureApplicationServices(Configuration);
+            services.ConfigureDataDependencies(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
